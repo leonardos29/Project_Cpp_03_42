@@ -1,21 +1,30 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(void)
+: ClapTrap("ScavTrap")
+{
+    _hp = 100;
+    _energy = 50;
+    _a_damage = 20;
+    std::cout << "Default constructor called for ScavTrap\n";
+}
+
 ScavTrap::ScavTrap(const std::string& name)
 : ClapTrap(name)
 {
     _hp = 100;
     _energy = 50;
     _a_damage = 20;
-    std::cout << "constructor of ScavTrap called\n";
+    std::cout << "constructor of ScavTrap called for " << _name << std::endl;
 }
 ScavTrap::ScavTrap(ScavTrap const &other)
 :ClapTrap(other)
 {   
-    std::cout << "Copy constructor of ScavTrap called\n";
+    std::cout << "Copy constructor of ScavTrap called for " << _name << std::endl;
 }
 ScavTrap &ScavTrap::operator=(ScavTrap const &other)
 {
-    std::cout << "Copy assignment operator called\n";
+    std::cout << "Copy assignment operator called for ScavTrap " << _name << std::endl;
 
     if(this != &other)
     {
@@ -26,7 +35,7 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &other)
 
 ScavTrap::~ScavTrap(void)
 {
-    std::cout << "Destructor of ScavTrap called\n";
+    std::cout << "Destructor of ScavTrap called for " << _name << std::endl;
 }
 void ScavTrap::attack(const std::string& target)
 {
@@ -44,5 +53,5 @@ void ScavTrap::attack(const std::string& target)
 }
 void ScavTrap::guardGate(void)
 {
-    std::cout << "ScavTrap is now in Gate keeper mode\n";
+    std::cout << "ScavTrap " << _name << " is now in Gate keeper mode\n";
 }

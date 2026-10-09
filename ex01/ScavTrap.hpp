@@ -6,6 +6,7 @@
 class ScavTrap : public ClapTrap
 {
     public:
+        ScavTrap(void);
         ScavTrap(const std::string& name);
         ScavTrap(ScavTrap const &other);
         ScavTrap& operator=(ScavTrap const &other);

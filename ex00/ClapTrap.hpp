@@ -3,10 +3,12 @@
 
 #include <iostream>
 #include <string>
+#include <climits>
 
 class ClapTrap
 {
     public:
+        ClapTrap(void);
         ClapTrap(const std::string& name);
         ClapTrap(ClapTrap const &other);
         ClapTrap& operator=(ClapTrap const &other);
