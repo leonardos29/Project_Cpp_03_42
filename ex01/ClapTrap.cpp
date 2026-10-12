@@ -75,6 +75,11 @@ void ClapTrap::takeDamage(unsigned int amount)
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
+    if(amount == 0)
+    {
+        std::cout << "ClapTrap " << _name << " cannot repair itself, the amount is 0\n";
+        return; 
+    }
     if(_hp == 0 || _energy == 0)
     {
         if(_hp == 0)
